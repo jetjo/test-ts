@@ -1,0 +1,1 @@
+{"version":3,"file":"991.js","mappings":"2HAAO,IAAIA,EAAO","sources":["webpack://test-ts/./src/lib-const.ts"],"sourcesContent":["export var BASE = 10;\n"],"names":["BASE"],"sourceRoot":""}

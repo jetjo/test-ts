@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktest_ts=self.webpackChunktest_ts||[]).push([[179],{791:()=>{eval("\n;// CONCATENATED MODULE: ./src/lib-const.ts\nvar BASE = 10;\nvar test = function (e) { return e + 1; };\n\n\n;// CONCATENATED MODULE: ./src/index.ts\n\ntest(1);\n\n\n//# sourceURL=webpack://test-ts/./src/index.ts_+_1_modules?")}},s=>{s(s.s=791)}]);

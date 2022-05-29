@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "es3",
+        "module": "esnext",
+        "allowJs": true,
+        "checkJs": false,
+        "moduleResolution": "node",
+        "lib": [
+            "esnext",
+            "dom",
+            "dom.iterable",
+            "ES2015"
+        ],
+    },
+    "include": [
+        // "node_modules",
+        "./src"
+    ]
+}
