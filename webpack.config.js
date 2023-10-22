@@ -4,7 +4,6 @@ const IS_PROD = ['prod', 'production'].includes(process.env.NODE_ENV);
 
 const rules = require('./webpack.rules').rules;
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
-// 测试
 module.exports = {
     devtool: 'eval',
     context: __dirname,
