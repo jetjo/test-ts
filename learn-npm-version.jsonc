@@ -13,7 +13,8 @@
         // npm version命令自身的执行顺序是:
         // 1、更改package.json中的version字段
         // 2、执行git add package.json
-        // 3、执行git commit -m "[new version]"
+        // 3、执行git commit -m "[new version]",可以给npm version 传递-m 参数修改提交时的message, 
+        // 如:npm version patch --force -m 'update version to %s', %s指代npm生成的新版本号
         // 所以从上面三个步骤看出,在第二步执行git add 时,npm 只add了package.json文件,本没有add .,
         // 所以要在perversion中执行git add .
         // "version": "npm run build && git add -A dist",
