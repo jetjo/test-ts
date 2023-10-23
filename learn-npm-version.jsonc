@@ -6,14 +6,23 @@
     "scripts": {
         "test": "exit 0",
         "build": "exist 0",
-        "preversion": "npm test && git add .", // precmd, 一种特殊的script,会在npm对应的內建指令cmd符合运行条件且准备执行前自动被调用,
+        "preversion": "npm test && git add .",
+        // precmd, 一种特殊的script,会在npm对应的內建指令cmd符合运行条件且准备执行前自动被调用,
         // 执行npm version时,npm会先执行git status,如果工作区是clean,则先执行perversion,否则报错终止.
-        // 不是clean时可以使用--force选项强制执行,但是执行完后工作区还是dirty,所以在perversion中加入git add .,这样执行完后工作区就是clean了.
-        // "version": "npm run build && git add -A dist",// version, 一种特殊的script,特殊在于npm有一个内建的version命令,
+        // 不是clean时可以使用--force选项强制执行,
+        // npm version命令自身的执行顺序是:
+        // 1、更改package.json中的version字段
+        // 2、执行git add package.json
+        // 3、执行git commit -m "[new version]"
+        // 所以从上面三个步骤看出,在第二步执行git add 时,npm 只add了package.json文件,本没有add .,
+        // 所以要在perversion中执行git add .
+        // "version": "npm run build && git add -A dist",
+        // version, 一种特殊的script,特殊在于npm有一个内建的version命令,
         // 所以这条version script会在内建的version执行成功后调用,
         "version": "npm run build",
-        // "postversion": "git push && git push --tags && rm -rf build/temp",// 在npm verison和version script执行成功后自动被调用
-        "postversion": "git commit -m 'clean after npm version' && git push && git push --tags"
+        // "postversion": "git push && git push --tags && rm -rf build/temp",
+        // 在npm version和version script执行成功后自动被调用
+        "postversion": "git push && git push --tags"
     },
     "keywords": [],
     "author": "",
