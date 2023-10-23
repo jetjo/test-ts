@@ -1,0 +1,20 @@
+{
+    "name": "test-ts",
+    "version": "1.2.4",
+    "description": "学习npm version",
+    "main": "index.js",
+    "scripts": {
+        "test": "exit 0",
+        "build": "exist 0",
+        "preversion": "npm test", // precmd, 一种特殊的script,会在npm对应的內建指令cmd符合运行条件且准备执行前自动被调用,
+        // 执行npm version时,npm会先执行git status,如果工作区是clearn,则先执行perversion,否则报错终止.
+        // "version": "npm run build && git add -A dist",// version, 一种特殊的script,特殊在于npm有一个内建的version命令,
+        // 所以这条version script会在内建的version执行成功后调用,
+        "version": "npm run build",
+        // "postversion": "git push && git push --tags && rm -rf build/temp",// 在npm verison和version script执行成功后自动被调用
+        "postversion": "git push && git push --tags"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}
